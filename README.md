@@ -10,6 +10,11 @@ dans une petite fenêtre façon macOS et une icône de la zone de notification.
 
 Développé et utilisé sur **Garuda Linux (base Arch)** avec des **AirPods Pro 3**.
 
+<img width="708" height="491" alt="image" src="https://github.com/user-attachments/assets/df91fc92-e923-4c85-b660-308468cb6d0e" />
+
+L<img width="546" height="41" alt="image" src="https://github.com/user-attachments/assets/3ed5fd91-a4aa-4e17-8059-e99c258df805" />
+
+
 ## Fonctionnalités
 
 - Jauges rondes animées, avec un dégradé vert → jaune → orange → rouge selon le niveau
