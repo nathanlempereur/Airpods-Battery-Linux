@@ -114,6 +114,15 @@ garde les AirPods les plus proches.
 - Sous Wayland, KDE peut ignorer la position demandée pour la fenêtre (elle reste déplaçable)
 - La batterie est donnée par paliers, donc approximative
 
-## Licence
+## Contribution & Licence
 
-MIT, voir [LICENSE](LICENSE).
+Ce module est **open-source**. Vous pouvez le modifier et proposer des améliorations via des **Pull Requests**.
+
+**Licence** : Ce projet est sous licence libre.
+**Contact** : contact@nlempereur.ovh
+
+### Contact
+- Email : **contact@nlempereur.ovh**
+- Site web : https://nlempereur.ovh/contact.php
+- Portfolio : https://nlempereur.ovh
+
