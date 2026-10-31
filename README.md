@@ -1,6 +1,6 @@
-# AirPods Battery Linux V.1.1
+# AirPods Battery Linux V.1.5
 
-![Version](https://img.shields.io/badge/version-1.1-blue.svg)
+![Version](https://img.shields.io/badge/version-1.5-blue.svg)
 ![Status](https://img.shields.io/badge/status-Libre-orange)
 ![Linux](https://img.shields.io/badge/Arch-compatible-success)
 
