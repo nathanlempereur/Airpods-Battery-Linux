@@ -3,7 +3,6 @@
 Affiche la batterie de tes **AirPods** (écouteur gauche, droit, boîtier) sous Linux,
 dans une petite fenêtre façon macOS et une icône de la zone de notification.
 
-
 Développé et utilisé sur **Garuda Linux (base Arch)** avec des **AirPods Pro 3**.
 
 ## Fonctionnalités
@@ -17,6 +16,54 @@ Développé et utilisé sur **Garuda Linux (base Arch)** avec des **AirPods Pro 
 - Aucune connexion, aucun compte, rien ne sort de ta machine : l'appli écoute simplement
   les annonces Bluetooth LE émises par les AirPods
 
+## Compatibilité
+
+Légende : ✅ testé · 🟡 devrait fonctionner (non testé) · ❔ inconnu · ❌ non géré
+
+> Seule la combinaison **Garuda Linux + AirPods Pro 3** a été testée. Le reste est déduit
+> du fonctionnement technique (même système Bluetooth, même format de message Apple).
+> Un retour d'expérience, bon ou mauvais, est le bienvenu dans les *Issues*.
+
+### Modèles d'AirPods
+
+| Modèle | Statut | Remarque |
+|---|---|---|
+| AirPods Pro 3 | ✅ | Testé |
+| AirPods Pro 2 (Lightning / USB-C) | 🟡 | Même format d'annonce |
+| AirPods Pro (1re génération) | 🟡 | Même format d'annonce |
+| AirPods 4 (avec ou sans réduction de bruit) | 🟡 | Même format d'annonce |
+| AirPods 3 | 🟡 | Même format d'annonce |
+| AirPods 2 | 🟡 | Même format d'annonce |
+| AirPods (1re génération) | 🟡 | Même format d'annonce |
+| AirPods Max | ❌ | Une seule batterie et pas de boîtier : l'affichage gauche / droit / boîtier ne serait pas correct |
+| Beats (Powerbeats Pro, Beats Fit Pro, Studio Buds…) | ❔ | Format proche, mais non testé ; le nom réel n'est pas détecté (il doit contenir « AirPods ») |
+
+Si plusieurs appareils Apple émettent à proximité, c'est le signal le plus fort (le plus proche) qui est retenu.
+
+### Systèmes
+
+| Système | Statut | Remarque |
+|---|---|---|
+| Garuda Linux | ✅ | Testé |
+| Arch Linux, EndeavourOS, Manjaro | 🟡 | Mêmes paquets que Garuda |
+| Debian, Ubuntu, Linux Mint, Pop!_OS | 🟡 | Paquets `python3-pyqt6` et `python3-bleak` (ou `pip install bleak`) |
+| Fedora, openSUSE | 🟡 | Équivalents des paquets Python ci-dessus, ou `pip` |
+| Windows | ❔ | Non prévu : `bleak` et PyQt6 existent, mais l'appli n'a pas été essayée et le nom réel des AirPods ne serait pas lu |
+| macOS | ❔ | Non prévu (macOS affiche déjà la batterie nativement) |
+
+Prérequis : Linux avec **BlueZ** (service `bluetooth` actif), un adaptateur **Bluetooth 4.0 ou plus**
+(Bluetooth Low Energy) et **Python 3.9+**.
+
+### Environnements de bureau
+
+| Environnement | Statut | Remarque |
+|---|---|---|
+| KDE Plasma, XFCE, Cinnamon, MATE, LXQt, Budgie | 🟡 | Zone de notification native |
+| GNOME | 🟡 | Il faut l'extension *AppIndicator / KStatusNotifierItem* pour voir l'icône ; sans elle, l'appli affiche directement la fenêtre (le bouton rouge quitte alors l'appli) |
+| Hyprland, Sway, i3 | 🟡 | Avec une barre qui gère le tray (waybar, polybar…) |
+| X11 | 🟡 | La fenêtre s'ouvre à côté de l'icône |
+| Wayland | 🟡 | Le compositeur peut ignorer la position demandée ; la fenêtre reste déplaçable |
+
 ## Installation
 
 Dépendances (Arch / Garuda / Manjaro) :
@@ -25,12 +72,13 @@ Dépendances (Arch / Garuda / Manjaro) :
 sudo pacman -S python-bleak python-pyqt6
 ```
 
-Autres distributions : `pip install bleak PyQt6`.
+Autres distributions : `pip install bleak PyQt6` (ou les paquets de ta distribution,
+voir le tableau plus haut).
 
 Puis :
 
 ```bash
-git clone (https://github.com/nathanlempereur/Airpods-Battery-Linux.git)
+git clone https://github.com/nathanlempereur/Airpods-Battery-Linux.git
 cd Airpods-Battery-Linux
 ./install.sh               # ajoute l'appli au menu
 ./install.sh --autostart   # + démarrage automatique (icône seule)
