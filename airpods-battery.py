@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-airpods-gui.py — batterie des AirPods dans une fenêtre façon macOS
+airpods-battery.py — batterie des AirPods dans une fenêtre façon macOS
 (coins arrondis, boutons rouge / jaune / vert, jauges rondes animées).
 
 Dépendances : sudo pacman -S python-bleak python-pyqt6
@@ -12,6 +12,7 @@ batterie...) : clic gauche = afficher / masquer la fenêtre, clic droit = menu.
 Boutons : rouge = masquer (l'icône reste), jaune = masquer, vert = épingler
 (la fenêtre reste affichée au premier plan au lieu de se fermer quand on clique
 ailleurs). Glisse la fenêtre n'importe où pour la déplacer.
+
 Option : --hidden pour démarrer uniquement dans la zone de notification.
 """
 import asyncio

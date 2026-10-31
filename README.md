@@ -26,6 +26,7 @@ Développé et utilisé sur **Garuda Linux (base Arch)** avec des **AirPods Pro 
 - Actualisation automatique, avec indication « signal perdu » si plus rien n'est reçu
 - Aucune connexion, aucun compte, rien ne sort de ta machine : l'appli écoute simplement
   les annonces Bluetooth LE émises par les AirPods
+
 ## Compatibilité
 
 Légende : ✅ testé · 🟡 devrait fonctionner (non testé) · ❔ inconnu · ❌ non géré
@@ -113,10 +114,11 @@ Ou sans installer : `python3 airpods-battery.py` (**sans sudo**).
 - Clic gauche sur l'icône : afficher / masquer la fenêtre
 - Clic droit : menu (afficher / masquer, quitter)
 - `--hidden` : démarre uniquement dans la zone de notification
+
 ## Comment ça marche
 
 Les AirPods diffusent en Bluetooth LE un message Apple « proximity pairing » qui contient
-le niveau de batterie de chaque écouteur et du boîtier (par paliers de 10 %). Le script
+le niveau de batterie de chaque écouteur et du boîtier (par paliers de 5 %). Le script
 scanne ces annonces avec [bleak](https://github.com/hbldh/bleak), décode le message et
 garde les AirPods les plus proches.
 
