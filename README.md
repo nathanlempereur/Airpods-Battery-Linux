@@ -1,5 +1,10 @@
 # AirPods Battery Linux
 
+![Version](https://img.shields.io/badge/version-1.1-blue.svg)
+![Status](https://img.shields.io/badge/status-Libre-orange)
+![Linux](https://img.shields.io/badge/Arch-compatible-success)
+
+
 Affiche la batterie de tes **AirPods** (écouteur gauche, droit, boîtier) sous Linux,
 dans une petite fenêtre façon macOS et une icône de la zone de notification.
 
