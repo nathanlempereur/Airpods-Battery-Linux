@@ -30,7 +30,7 @@ Autres distributions : `pip install bleak PyQt6`.
 Puis :
 
 ```bash
-git clone <URL-du-repo>
+git clone (https://github.com/nathanlempereur/Airpods-Battery-Linux.git)
 cd Airpods-Battery-Linux
 ./install.sh               # ajoute l'appli au menu
 ./install.sh --autostart   # + démarrage automatique (icône seule)
