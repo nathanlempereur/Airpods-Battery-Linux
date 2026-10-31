@@ -40,7 +40,7 @@ Légende : ✅ testé · 🟡 devrait fonctionner (non testé) · ❔ inconnu ·
 |---|---|---|
 | AirPods Pro 3 | ✅ | Testé |
 | AirPods Pro 2 (Lightning / USB-C) | 🟡 | Même format d'annonce |
-| AirPods Pro (1re génération) | 🟡 | Même format d'annonce |
+| AirPods Pro (1re génération) | ✅ | Testé |
 | AirPods 4 (avec ou sans réduction de bruit) | 🟡 | Même format d'annonce |
 | AirPods 3 | 🟡 | Même format d'annonce |
 | AirPods 2 | 🟡 | Même format d'annonce |
