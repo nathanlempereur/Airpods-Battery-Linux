@@ -13,7 +13,7 @@ Développé et utilisé sur **Garuda Linux (base Arch)** avec des **AirPods Pro 
 <img width="480" height="312" alt="image" src="https://github.com/user-attachments/assets/0bbfffcc-026a-4d37-a3c6-f1e2550defa1" />
 
 
-L<img width="546" height="41" alt="image" src="https://github.com/user-attachments/assets/3ed5fd91-a4aa-4e17-8059-e99c258df805" />
+<img width="546" height="41" alt="image" src="https://github.com/user-attachments/assets/3ed5fd91-a4aa-4e17-8059-e99c258df805" />
 
 
 ## Fonctionnalités
