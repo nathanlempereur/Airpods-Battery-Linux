@@ -26,7 +26,6 @@ Développé et utilisé sur **Garuda Linux (base Arch)** avec des **AirPods Pro 
 - Actualisation automatique, avec indication « signal perdu » si plus rien n'est reçu
 - Aucune connexion, aucun compte, rien ne sort de ta machine : l'appli écoute simplement
   les annonces Bluetooth LE émises par les AirPods
-
 ## Compatibilité
 
 Légende : ✅ testé · 🟡 devrait fonctionner (non testé) · ❔ inconnu · ❌ non géré
@@ -62,7 +61,8 @@ Si plusieurs appareils Apple émettent à proximité, c'est le signal le plus fo
 | Windows | ❔ | Non prévu : `bleak` et PyQt6 existent, mais l'appli n'a pas été essayée et le nom réel des AirPods ne serait pas lu |
 | macOS | ❔ | Non prévu (macOS affiche déjà la batterie nativement) |
 
-Prérequis : Linux avec **BlueZ** (service `bluetooth` actif), un adaptateur **Bluetooth 4.0 ou plus**
+Prérequis : Linux avec **BlueZ** (service `bluetooth` actif, commande `bluetoothctl` pour lire le nom
+réel des AirPods et pour le lancement à la connexion), un adaptateur **Bluetooth 4.0 ou plus**
 (Bluetooth Low Energy) et **Python 3.9+**.
 
 ### Environnements de bureau
@@ -91,11 +91,20 @@ Puis :
 ```bash
 git clone https://github.com/nathanlempereur/Airpods-Battery-Linux.git
 cd Airpods-Battery-Linux
-./install.sh               # ajoute l'appli au menu
-./install.sh --autostart   # + démarrage automatique (icône seule)
+./install.sh
 ```
 
-Désinstaller : `./install.sh --uninstall`.
+Le script te pose quelques questions, sans paramètre à retenir :
+
+1. **Installer** ou **désinstaller**
+2. Si tu installes, **comment lancer l'appli** :
+   - à la main, depuis le menu d'applications ;
+   - au démarrage de ta session (icône dans la zone de notification) ;
+   - automatiquement **dès que tes AirPods se connectent** (l'appli s'ouvre à la connexion et se
+     ferme à la déconnexion ; si tu la quittes toi-même, elle ne se relance qu'à la connexion suivante).
+Pour changer de mode ou désinstaller, relance simplement `./install.sh`.
+
+Le dernier mode utilise `bluetoothctl` (paquet `bluez-utils` sur Arch / Garuda, `bluez` sur Debian / Ubuntu).
 
 Ou sans installer : `python3 airpods-battery.py` (**sans sudo**).
 
@@ -104,7 +113,6 @@ Ou sans installer : `python3 airpods-battery.py` (**sans sudo**).
 - Clic gauche sur l'icône : afficher / masquer la fenêtre
 - Clic droit : menu (afficher / masquer, quitter)
 - `--hidden` : démarre uniquement dans la zone de notification
-
 ## Comment ça marche
 
 Les AirPods diffusent en Bluetooth LE un message Apple « proximity pairing » qui contient
