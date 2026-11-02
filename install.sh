@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Installe / désinstalle AirPods Battery pour l'utilisateur courant (sans sudo).
 # Lance simplement : ./install.sh   (le script te pose les questions)
 set -euo pipefail
@@ -25,19 +25,6 @@ choose() {
 
 stop_watcher() { pkill -f "bash $WATCH\$" 2>/dev/null || true; }
 
-echo "=== AirPods Battery Linux ==="
-echo
-echo "Que veux-tu faire ?"
-echo "  1) Installer (ou changer le mode de lancement)"
-echo "  2) Désinstaller"
-action=$(choose "Ton choix [1] : " 1 2)
-
-if [[ "$action" == "2" ]]; then
-    stop_watcher
-    rm -f "$BIN" "$WATCH" "$APPS" "$AUTO"
-    echo "Désinstallé."
-    exit 0
-fi
 
 # --- vérifications (avertissements seulement) ---
 if ! python3 -c "import bleak, PyQt6" 2>/dev/null; then
@@ -62,12 +49,13 @@ Categories=Utility;
 EOF
 
 # --- mode de lancement ---
+echo "=== AirPods Battery Linux ==="
 echo
 echo "Comment veux-tu lancer l'appli ?"
 echo "  1) À la main, depuis le menu d'applications"
 echo "  2) Au démarrage de ma session (icône dans la zone de notification)"
 echo "  3) Automatiquement dès que mes AirPods se connectent"
-mode=$(choose "Ton choix [1] : " 1 3)
+mode=$(choose "Ton choix [3] : " 3 3)
 
 stop_watcher
 rm -f "$AUTO" "$WATCH"
@@ -142,4 +130,4 @@ esac
 
 echo
 echo "Installé : $BIN"
-echo "Pour changer de mode ou désinstaller, relance ./install.sh"
+echo "Pour changer de mode, relance ./install.sh et ./uninstall.sh pour supprimer l'app"
